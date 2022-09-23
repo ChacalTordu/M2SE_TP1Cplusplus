@@ -1,42 +1,56 @@
+//
+//  point2D.h
+//  TP1C++
+//
+//  Created by Gustavo Guerrero on 15/09/2019.
+//  Copyright Â© 2019 Gustavo Guerrero. All rights reserved.
+//
+
 #ifndef POINT2D_H
 #define POINT2D_H
+#include <stdio.h>
+#include <iostream>
+#include <tgmath.h>
 
 class point2D
 {
-    public:
-        point2D();
-        point2D(double a, double b);
-        double CalculeNorme();
-        void print();
-        ~point2D();
-        double get_x();
-        double get_y();
-        void set_x(double a);
-        void set_y(double b);
+public:
+    //Constructeur
+    point2D();
+    point2D(double a, double b);
 
-     /** @brief Surcharge de l'opérateur d'affectation.
-      *  @param const point2D& p2.
+    
+    //MÃ©thodes
+    double CalculeNorme();
+    void print();
+    double get_x();
+    double get_y();
+    void set_x(double a);
+    void set_y(double b);
+    ~point2D();
+
+    /** @brief Surcharge de l'opÃˆrateur d'affectation.
+     *  @param const point2D& p2.
      */
-     //   point2D operator=( const point2D& p2 );
-
-        point2D & operator= (const point2D & p2);
-
-     /** @brief Surcharge de l'opérateur +=.
-      */
-
-       point2D& operator+=( const point2D& p2 );
-
-      /** @brief Surcharge de l'opérateur ==.
-      */
-       bool operator==( const point2D& p2 );
-
-
-
-    protected:
-        double x;
-        double y;
-
-    private:
+    //   point2D operator=( const point2D& p2 );
+    
+    point2D & operator=(const point2D & p2);
+    
+    /** @brief Surcharge de l'opÃˆrateur +=.
+     */
+    
+    point2D & operator+=(const point2D& p2 );
+    
+    /** @brief Surcharge de l'opÃˆrateur ==.
+     */
+    bool operator==(const point2D& p2);
+    
+protected:
+    //Attribut
+    double x;
+    double y;
+    
+private:
 };
 
 #endif // POINT2D_H
